@@ -46,12 +46,14 @@ button,
 textarea,
 select {
   font: inherit;
+  display: block;
 }
 
 button {
   border: none;
   cursor: pointer;
   background-color: transparent;
+  padding: 0;
 }
 
 q {
