@@ -23,6 +23,10 @@ main {
   margin: 0 auto;
 }
 
+section {
+  margin-bottom: 120px;
+}
+
 .logo {
   display: inline-block;
   padding: 5px 0;
@@ -71,6 +75,39 @@ main {
   }
 }
 
+.external-link {
+  display: inline-block;
+  color: $darkBlue-900;
+  line-height: 1;
+  border-bottom: 1px solid $darkBlue-900;
+  transition: color 0.3s, box-shadow 0.2s, text-shadow 0.3s;
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.01);
+    box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+    border-radius: 5px;
+    border: none;
+  }
+
+  &:hover {
+    color: $orange-900;
+    border: none;
+  }
+
+  &:active {
+    color: $dark;
+    text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+    border: none;
+  }
+}
+
+.section-title {
+  @extend %rubik-500;
+  text-align: center;
+  font-size: 36px;
+  color: $darkBlue-900;
+}
+
 .social {
   display: flex;
   align-items: center;
@@ -96,7 +133,8 @@ main {
 
     &:hover {
       background: #FF7A50;
-      path{
+
+      path {
         transition: fill 0.3s;
         fill: #fff;
       }
@@ -104,10 +142,24 @@ main {
 
     &:active {
       background: #FFF2ED;
-      path{
+
+      path {
         transition: fill 0.3s;
         fill: #FF7A50;
       }
     }
   }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
