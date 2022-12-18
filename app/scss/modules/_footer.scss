@@ -1,0 +1,52 @@
+.footer {
+  &__inner {
+    display: flex;
+    gap: 70px;
+    margin-bottom: 55px;
+  }
+
+  &__logo {
+    margin-bottom: 20px;
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    width: 570px;
+  }
+
+  &__list-item {
+    margin-bottom: 15px;
+  }
+
+  &__list-link {
+    font-size: 18px;
+    color: $dark-900;
+    letter-spacing: 0.01em;
+    transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+
+    &:focus {
+      box-shadow: 0px 0px 0px 2px $transparent-100;
+    }
+
+    &:hover {
+      color: $accent-900;
+    }
+
+    &:active {
+      text-shadow: 2px 2px 5px $transparent-200;
+    }
+  }
+
+  &__copyright {
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+    border-top: 1px solid $transparent-500;
+    font-size: 14px;
+  }
+
+}

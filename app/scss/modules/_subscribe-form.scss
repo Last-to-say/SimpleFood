@@ -1,0 +1,48 @@
+.subscribe-form {
+  &__label {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  &__input {
+    width: 200px;
+    height: 44px;
+    padding: 0 15px;
+    border: 1px solid $silver-300;
+    border-radius: 5px;
+    color: $silver-300;
+    background-color: $light-100;
+    font-size: 14px;
+    opacity: 0.9;
+    transition: border-color 0.3s;
+
+    &::placeholder {
+      color: $silver-300;
+      font-size: 14px;
+      opacity: 0.9;
+      transition: color 0.3s;
+    }
+
+    &:focus {
+      border: 1px solid $accent-900;
+    }
+
+    &:hover::placeholder {
+      color: $dark-900;
+      opacity: 0.9;
+    }
+  }
+
+  &__button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 37px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  &__svg {
+    margin-right: 15px;
+  }
+}

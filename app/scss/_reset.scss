@@ -47,6 +47,7 @@ textarea,
 select {
   font: inherit;
   display: block;
+  outline: transparent;
 }
 
 button {
@@ -61,9 +62,13 @@ q {
 }
 
 a{
+  display: inline-block;
   text-decoration: none;
+  outline: transparent;
+  font-family:inherit;
 }
 
 address{
   font-style: normal;
+
 }

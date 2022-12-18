@@ -1,0 +1,42 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+  background-color: $light-100;
+  border: 1px solid $silver-200;
+  height: 100%;
+  border-radius: 5px;
+  padding: 10px 15px 20px;
+  transition: border-color 0.5s;
+
+  &:hover {
+    border-color: $accent-900;
+  }
+
+  &__link-img {
+    margin-bottom: 10px;
+  }
+
+  &__img {
+    margin: 0 auto;
+  }
+
+  &__link-title {
+    margin-bottom: 15px;
+    border: none;
+    color: $dark-900;
+  }
+
+  &__title {
+    font-size: 15px;
+    font-weight: normal;
+  }
+
+  &__price {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+}
