@@ -53,6 +53,7 @@ main {
   border-radius: 6px;
   font-size: 14px;
   transition: color 0.5s, background-color 0.5s, box-shadow 0.5s;
+  cursor: pointer;
 
   &:focus {
     color: $accent-900;
@@ -116,4 +117,25 @@ main {
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
   overflow: hidden;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 210px));
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 55px;
+}
+
+.restorants {
+  padding-bottom: 70px;
+
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__grid {
+    grid-template-columns: repeat(auto-fit, minmax(370px, 370px));
+  }
+
 }

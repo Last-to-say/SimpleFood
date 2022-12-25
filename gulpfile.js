@@ -3,9 +3,20 @@ const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
+const fileInclude   = require('gulp-file-include');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 
+
+const htmlInclude = () => {
+  return src(['app/html/*.html']) 													
+  .pipe(fileInclude({
+    prefix: '@',
+    basepath: '@file',
+  }))
+  .pipe(dest('app'))
+  .pipe(browserSync.stream());
+}
 
 function browsersync() {
   browserSync.init({
@@ -35,6 +46,7 @@ function scripts() {
   return src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/mixitup/dist/mixitup.js',
+    'node_modules/slick-slider/slick/slick.js',
     'app/js/main.js'
   ])
   .pipe(concat('main.min.js'))
@@ -62,6 +74,7 @@ function cleanDist() {
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+  watch(['app/html/**/*.html'], htmlInclude);
   watch(['app/**/*.html']).on('change', browserSync.reload); 
 }
 
@@ -69,9 +82,10 @@ function watching() {
 
 exports.styles = styles;
 exports.scripts = scripts;
+exports.htmlInclude = htmlInclude;
 exports.browsersync = browsersync;
 exports.watching = watching;
 exports.cleanDist = cleanDist;
 exports.build = series(cleanDist, build);
 
-exports.default = parallel(styles, scripts, browsersync, watching);
+exports.default = parallel(htmlInclude, styles, scripts, browsersync, watching);

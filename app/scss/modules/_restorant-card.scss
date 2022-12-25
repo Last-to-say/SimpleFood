@@ -1,0 +1,85 @@
+.restorant-card {
+  background: $light-100;
+  box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  transition: box-shadow 0.5s;
+  height: 100%;
+
+  &__link {
+    position: relative;
+    height: 100%;
+
+    &:focus .restorant-card__interactive {
+      background-color: $light-200;
+      color: $accent-900;
+      border: 2px solid $transparent-100;
+    }
+
+    &:hover .restorant-card__interactive {
+      background-color: $light-100;
+      color: $accent-900;
+      border: 2px solid $transparent-100;
+    }
+
+    &:hover .restorant-card__icon {
+      transform: translateX(160%);
+    }
+
+    &:active .restorant-card__interactive {
+      background-color: $light-200;
+      color: $accent-900;
+      border: none;
+    }
+  }
+
+
+  &:hover {
+    box-shadow: 0px 3px 15px rgba($transparent-400, 0.5);
+  }
+
+  &__info {
+    padding: 10px 20px 20px;
+  }
+
+  &__img {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+
+  &__name {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 25px;
+  }
+
+  &__time {
+    padding-left: 30px;
+    background-image: url('../images/icons/clock.svg');
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 22px 22px;
+    font-size: 18px;
+    font-weight: 300;
+    width: calc(100% - 79px);
+  }
+
+  &__icon {
+    transition: transform 0.7s ease-in-out;
+  }
+
+  &__interactive {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 79px;
+    height: 33px;
+    border: 2px solid transparent;
+    border-radius: 20px;
+    background-color: $accent-900;
+    color: $light-100;
+    transition: border 0.5s, color 0.5s, background-color 0.5s;
+  }
+}

@@ -5,12 +5,14 @@
 @import 'global';
 
 
-@import 'modules/header';
-@import 'modules/hero';
-@import 'modules/categories';
-@import 'modules/product-card';
-@import 'modules/products-grid';
-@import 'modules/footer';
-@import 'modules/social';
-@import 'modules/subscribe-form';
-@import 'modules/contacts';
+@import './modules/header';
+@import './modules/hero';
+@import './modules/categories';
+@import './modules/product-card';
+@import './modules/advantages';
+@import './modules/restorant-card';
+@import './modules/review';
+@import './modules/app';
+@import './modules/footer';
+@import './modules/social';
+@import './modules/subscribe-form';

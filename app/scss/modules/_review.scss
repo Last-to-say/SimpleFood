@@ -1,0 +1,126 @@
+.review {
+  &__title {
+    margin-bottom: 45px;
+  }
+
+  &__item-inner {
+    display: flex;
+    align-items: center;
+    max-width: 990px;
+    margin: 0 auto;
+    padding-bottom: 80px;
+  }
+
+  &__img {
+    margin-right: 80px;
+    border-radius: 50%;
+  }
+
+  &__content {
+    max-width: 570px;
+  }
+
+
+  &__text {
+    position: relative;
+    margin-bottom: 35px;
+  }
+
+  &__text::before,
+  &__text::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+
+  &__text::before {
+    top: 0;
+    left: -42px;
+    background-image: url('../images/icons/quoteOpen.svg');
+  }
+
+  &__text::after {
+    bottom: -10px;
+    right: -42px;
+    background-image: url('../images/icons/quoteClose.svg');
+  }
+
+  &__text-inner {
+    font-style: italic;
+  }
+
+  &__author {
+    font-weight: 500;
+    color: $accent-900;
+  }
+
+  &__author-info {
+    display: block;
+    font-size: 14px;
+    color: $dark-900;
+    padding-top: 15px;
+  }
+}
+
+.slick {
+  &-dots {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-flex;
+    justify-content: center;
+
+    button {
+      font-size: 0;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $silver-300;
+      border: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: $light-200;
+      border: 2px solid rgba($transparent-300, 0.7);
+    }
+
+    button:focus {
+      border: 2px solid $accent-900;
+    }
+
+    button:active{
+      background-color: $accent-700;
+      border: none;
+    }
+
+    li:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    .slick-active button {
+      background-color: $accent-800;
+    }
+
+  }
+
+  &-prev,
+  &-next {
+    bottom: 55px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: $silver-300;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid $silver-300;
+    cursor: pointer;
+  }
+}

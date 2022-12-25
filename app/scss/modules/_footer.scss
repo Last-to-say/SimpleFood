@@ -23,7 +23,6 @@
 
   &__list-link {
     font-size: 18px;
-    color: $dark-900;
     letter-spacing: 0.01em;
     transition: color 0.3s, text-shadow 0.3s, box-shadow 0.3s;
     border-radius: 5px;
@@ -49,4 +48,38 @@
     font-size: 14px;
   }
 
+}
+
+.contacts {
+  &__list {
+    margin-bottom: 10px;
+  }
+
+  &__item:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    color: $dark-900;
+    letter-spacing: 0.01em;
+    border: none;
+
+    &:hover .contacts__svg {
+      stroke: $accent-900;
+    }
+
+    &:active .contacts__svg {
+      stroke: $dark-900;
+    }
+  }
+
+  &__icon {
+    color: transparent;
+    stroke: $dark-900;
+    margin-right: 12px;
+    transition: stroke 0.5s;
+  }
 }
