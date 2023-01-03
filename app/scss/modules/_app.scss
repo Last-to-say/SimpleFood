@@ -1,15 +1,15 @@
 .app {
 
   &__inner {
-    background-image: url('../images/app/1.jpg');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size: 580px 370px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   &__content {
     max-width: 540px;
-    padding: 40px 0;
+    margin-right: 30px;
   }
 
   &__title {
@@ -25,18 +25,20 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    height: 40px;
+
+    &:not(:last-child){
+      margin-right: 25px;
+    }
   }
 
   &__link--apple {
     width: 120px;
-    height: 40px;
     background-image: url('../images/icons/appStore.svg');
-    margin-right: 25px;
   }
 
   &__link--google {
     width: 135px;
-    height: 40px;
     background-image: url('../images/icons/gStore.svg');
   }
 }

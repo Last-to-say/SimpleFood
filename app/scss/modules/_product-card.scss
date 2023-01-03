@@ -1,9 +1,4 @@
 .product-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 15px;
   background-color: $light-100;
   border: 1px solid $silver-200;
   height: 100%;
@@ -11,15 +6,29 @@
   padding: 10px 15px 20px;
   transition: border-color 0.5s;
 
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    font-size: 15px;
+  }
+
   &:hover {
     border-color: $accent-900;
   }
 
   &__img {
     margin: 0 auto 15px;
+    object-fit: contain;
   }
 
   &__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
     font-size: 15px;
     font-weight: normal;
     margin-bottom: 10px;

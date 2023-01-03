@@ -1,11 +1,12 @@
 .advantages {
   padding-bottom: 110px;
+
   &__inner {
-    max-width: 1030px; 
-    background-image: url(../images/advantages/delivery.png);
+    max-width: 1030px;
+    background-image: url('../images/advantages/delivery.png');
     background-repeat: no-repeat;
-    background-position: left;
-    background-size: 440px 585px;
+    background-position: left center;
+    background-size: auto;
     margin: 0 auto;
   }
 
@@ -19,7 +20,7 @@
     text-align: left;
   }
 
-  &__title-decor{
+  &__title-decor {
     display: block;
   }
 
@@ -27,32 +28,35 @@
     position: relative;
     padding: 2px 0 2px 61px;
     font-size: 24px;
-  }
 
-  &__list-item::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 34px;
-    height: 34px;
-    background-image: url(../images/icons/building.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-  }
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
 
-  &__list-item--time::before {
-    background-image: url(../images/icons/time.svg);
-  }
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+    }
 
-  &__list-item--delivery::before {
-    background-image: url(../images/icons/delivery.svg );
-  }
+    &--time::before {
+      background-image: url('../images/icons/time.svg');
+    }
 
-  &__list-item:not(:last-child) {
-    margin-bottom: 20px;
+    &--delivery::before {
+      background-image: url('../images/icons/delivery.svg');
+    }
+
+    &--building::before {
+      background-image: url('../images/icons/building.svg');
+    }
   }
 
   &__info {
@@ -61,7 +65,7 @@
     margin-left: auto;
   }
 
-  &__link{
+  &__button {
     padding: 12px 32px;
     font-size: 18px;
   }

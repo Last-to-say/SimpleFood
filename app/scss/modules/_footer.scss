@@ -11,14 +11,8 @@
 
   &__list {
     display: grid;
-    grid-auto-flow: column;
-    grid-auto-columns: 1fr;
-    grid-template-rows: repeat(4, 1fr);
-    width: 570px;
-  }
-
-  &__list-item {
-    margin-bottom: 15px;
+    grid-template-columns: 210px 160px 187px;
+    gap: 15px;
   }
 
   &__list-link {
@@ -67,11 +61,11 @@
     letter-spacing: 0.01em;
     border: none;
 
-    &:hover .contacts__svg {
+    &:hover .contacts__icon {
       stroke: $accent-900;
     }
 
-    &:active .contacts__svg {
+    &:active .contacts__icon {
       stroke: $dark-900;
     }
   }

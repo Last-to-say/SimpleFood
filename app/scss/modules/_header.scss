@@ -44,83 +44,153 @@
   &__list-link.active {
     color: $accent-900;
   }
+
+
 }
 
 .user-nav {
-    display: flex;
+  display: flex;
+  align-items: center;
+
+  &__button {
+    position: relative;
+    display: inline-flex;
     align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border-radius: 5px;
+    transition: background-color 0.5s;
 
-    &__button {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      border-radius: 5px;
-      transition: background-color 0.5s;
-
-      &:hover .user-nav__icon {
-        stroke: $light-100;
-      }
-  
-      &:active .user-nav__icon {
-        stroke: $dark-900;
-      }
-    }
-
-    &__button:focus {
-      background-color: $transparent-300;
-      box-shadow: 0px 0px 0px 2px $transparent-100;
-      stroke: $dark-900;
-    }
-
-    &__button:hover {
-      background-color: $accent-800;
+    &:hover .user-nav__icon {
       stroke: $light-100;
     }
 
-    &__button:active {
-      background-color: $light-200;
-    }
-
-    &__button:not(:last-child) {
-      margin-right: 5px;
-    }
-
-    &__button:hover .user-nav__num {
-      background-color: $light-100;
-      color: $accent-800;
-    }
-
-    &__button:active .user-nav__num {
-      background-color: $accent-800;
-      color: $light-100;
-    }
-
-    &__num {
-      position: absolute;
-      top: 7px;
-      right: 4px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background-color: $accent-900;
-      font-size: 10px;
-      color: $light-100;
-      z-index: 1;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    &__icon {
-      color: transparent;
+    &:active .user-nav__icon {
       stroke: $dark-900;
-      transition: stroke 0.5s;
     }
   }
+
+  &__button:focus {
+    background-color: $transparent-300;
+    box-shadow: 0px 0px 0px 2px $transparent-100;
+    stroke: $dark-900;
+  }
+
+  &__button:hover {
+    background-color: $accent-800;
+    stroke: $light-100;
+  }
+
+  &__button:active {
+    background-color: $light-200;
+  }
+
+  &__button:not(:last-child) {
+    margin-right: 5px;
+  }
+
+  &__button:hover .user-nav__num {
+    background-color: $light-100;
+    color: $accent-800;
+  }
+
+  &__button:active .user-nav__num {
+    background-color: $accent-800;
+    color: $light-100;
+  }
+
+  &__num {
+    position: absolute;
+    top: 7px;
+    right: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $accent-900;
+    font-size: 10px;
+    color: $light-100;
+    z-index: 1;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  &__icon {
+    color: transparent;
+    stroke: $dark-900;
+    transition: stroke 0.5s;
+  }
+}
+
+.burger {
+  @include burger;
+  $burgerWidth: 30px;
+  $burgerHeight: 20px;
+  $burgerColor: $dark-800;
+  $burgerLineHeight: 2px;
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .burger {
+    margin-left: 15px;
+    display: block;
+    z-index: 15;
+  }
+
+  .header__navigation {
+    position: relative;
+  }
+
+  .menu__list {
+    position: absolute;
+    left: -100%;
+  }
+
+  .menu__list--responsive {
+    flex-direction: column;
+    top: 114px;
+    left: 0;
+    transform: translateX(-50%);
+    border-bottom: 2px solid #EEEFF3;
+    width: 100%;
+    padding-bottom: 25px;
+  }
+
+  .menu__list--responsive .menu__list-item:not(:last-child) {
+    margin: 0 0 20px 0;
+  }
+
+  .menu__list--responsive .menu__list-link {
+    font-size: 20px;
+  }
+
+  .menu--responsive {
+    align-items: flex-start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 90%;
+    background-color: $light-100;
+    z-index: 13;
+  }
+
+  .menu--responsive+.user-nav {
+    margin-left: auto;
+  }
+
+  .menu--responsive .logo {
+    padding: 20px 0 20px 15px;
+    border-bottom: 2px solid #EEEFF3;
+    width: 100%;
+  }
+
+
+}

@@ -8,8 +8,8 @@ html {
   box-sizing: inherit;
 }
 
-ul[class],
-ol[class] {
+ul,
+ol {
   padding: 0;
 }
 
@@ -32,7 +32,7 @@ dd {
   margin: 0;
 }
 
-ul[class] {
+ul {
   list-style: none;
 }
 
@@ -61,15 +61,14 @@ q {
   quotes: none;
 }
 
-a{
+a {
   display: inline-block;
   text-decoration: none;
   outline: transparent;
-  font-family:inherit;
+  font-family: inherit;
   color: inherit;
 }
 
-address{
+address {
   font-style: normal;
-
 }
