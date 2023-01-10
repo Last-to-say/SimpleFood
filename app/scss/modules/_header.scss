@@ -2,8 +2,13 @@
 
   &__navigation {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding: 59px 0;
+
+    @media (max-width: $md) {
+      padding: 25px 0;
+    }
   }
 }
 
@@ -14,9 +19,28 @@
   align-items: center;
   width: 100%;
 
+  @media (max-width: $md) {
+    margin-right: 0;
+  }
+
+  &__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 30px;
+  }
+
   &__list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+
+    @media (max-width: $md) {
+      display: none;
+    }
   }
 
   &__list-item:not(:last-child) {
@@ -44,8 +68,103 @@
   &__list-link.active {
     color: $accent-900;
   }
+}
 
+.menu--responsive {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 90%;
+  padding: 25px 25px 0 15px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: $silver-100;
+  z-index: 2;
+  margin-right: 0;
+  overflow: scroll;
 
+  .burger--close {
+    display: block;
+    z-index: 1;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    color: $dark-800;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      top: 50%;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+      top: 50%;
+    }
+  }
+
+  .menu__mobile {
+    position: relative;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      width: 100%;
+      background-color: $silver-300;
+    }
+  }
+
+  .contacts--mobile {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .menu__list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding-bottom: 25px;
+    margin-bottom: 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0px;
+      height: 1px;
+      width: 100%;
+      background-color: $silver-300;
+    }
+  }
+
+  .menu__list-item:not(:last-child) {
+    margin: 0 0 20px;
+  }
+
+  &+.user-nav {
+    margin-left: auto;
+  }
+}
+
+.contacts--mobile {
+  display: none;
 }
 
 .user-nav {
@@ -128,69 +247,49 @@
 }
 
 .burger {
-  @include burger;
-  $burgerWidth: 30px;
-  $burgerHeight: 20px;
-  $burgerColor: $dark-800;
-  $burgerLineHeight: 2px;
   display: none;
-}
 
-@media (max-width: 768px) {
-
-  .burger {
-    margin-left: 15px;
-    display: block;
-    z-index: 15;
+  &--close {
+    display: none;
   }
 
-  .header__navigation {
-    position: relative;
+  @media (max-width: $md) {
+    &--open {
+      display: block;
+      z-index: 1;
+      width: 30px;
+      height: 20px;
+      position: relative;
+      color: $dark-800;
+      margin-left: 15px;
+    }
+
+    &__line {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: currentColor;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      top: calc(100% - 2px);
+    }
   }
-
-  .menu__list {
-    position: absolute;
-    left: -100%;
-  }
-
-  .menu__list--responsive {
-    flex-direction: column;
-    top: 114px;
-    left: 0;
-    transform: translateX(-50%);
-    border-bottom: 2px solid #EEEFF3;
-    width: 100%;
-    padding-bottom: 25px;
-  }
-
-  .menu__list--responsive .menu__list-item:not(:last-child) {
-    margin: 0 0 20px 0;
-  }
-
-  .menu__list--responsive .menu__list-link {
-    font-size: 20px;
-  }
-
-  .menu--responsive {
-    align-items: flex-start;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 90%;
-    background-color: $light-100;
-    z-index: 13;
-  }
-
-  .menu--responsive+.user-nav {
-    margin-left: auto;
-  }
-
-  .menu--responsive .logo {
-    padding: 20px 0 20px 15px;
-    border-bottom: 2px solid #EEEFF3;
-    width: 100%;
-  }
-
-
 }

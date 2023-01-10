@@ -5,20 +5,46 @@
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
+
+    @media (max-width: $md) {
+      justify-content: center;
+    }
   }
 
   &__content {
     max-width: 540px;
     margin-right: 30px;
+
+    @media (max-width: $md) {
+      margin-right: 0;
+    }
   }
 
   &__title {
     margin-bottom: 45px;
     text-align: left;
+
+    @media (max-width: $md) {
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: $sm) {
+      margin-bottom: 15px;
+    }
   }
 
   &__text {
     margin-bottom: 35px;
+
+    @media (max-width: $md) {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
   }
 
   &__link {
@@ -27,7 +53,7 @@
     background-size: cover;
     height: 40px;
 
-    &:not(:last-child){
+    &:not(:last-child) {
       margin-right: 25px;
     }
   }
@@ -40,5 +66,11 @@
   &__link--google {
     width: 135px;
     background-image: url('../images/icons/gStore.svg');
+  }
+
+  &__img {
+    @media (max-width: $sm) {
+      display: none;
+    }
   }
 }

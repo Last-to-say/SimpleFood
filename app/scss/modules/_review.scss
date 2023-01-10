@@ -16,11 +16,29 @@
     align-items: center;
     max-width: 990px;
     margin: 0 auto 40px;
+
+    @media (max-width: $md) {
+      flex-direction: column;
+      margin-bottom: 0;
+    }
   }
 
   &__img {
     margin-right: 80px;
     border-radius: 50%;
+
+    @media (max-width: $lg) {
+      margin-right: 40px;
+    }
+
+    @media (max-width: $md) {
+      margin: 0 0 30px;
+    }
+
+    @media (max-width: $sm) {
+      width: 100px;
+      height: 100px;
+    }
   }
 
 
@@ -51,18 +69,41 @@
       top: 0;
       left: -42px;
       background-image: url('../images/icons/quoteOpen.svg');
+
+      @media(max-width: $md) {
+        left: -33px;
+      }
     }
 
     &::after {
       bottom: -10px;
       right: -42px;
       background-image: url('../images/icons/quoteClose.svg');
+
+      @media (max-width: $xl) {
+        bottom: -25px;
+        right: 0px;
+      }
+    }
+
+    @media (max-width: $md) {
+      margin-left: 35px;
+      font-size: 16px;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 14px;
+      margin-bottom: 20px;
     }
   }
 
   &__author {
     font-weight: 500;
     color: $accent-900;
+
+    @media (max-width: $md) {
+      font-size: 16px;
+    }
   }
 
   &__author-info {
@@ -71,92 +112,6 @@
     color: $dark-900;
     margin-top: 15px;
   }
-}
 
-.slick-dots {
-  display: inline-flex;
-  justify-content: center;
-  order: 2;
-  margin-right: 23px;
-
-  button {
-    font-size: 0;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background-color: $silver-300;
-    border: 2px solid transparent;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $light-200;
-      border: 2px solid rgba($transparent-300, 0.7);
-    }
-
-    &:focus {
-      border: 2px solid $accent-900;
-    }
-
-    &:active {
-      background-color: $accent-700;
-      border: none;
-    }
-  }
-
-  li:not(:last-child) {
-    margin-right: 15px;
-  }
-
-  .slick-active button {
-    background-color: $accent-800;
-  }
-
-}
-
-.slick {
-  &__btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: $silver-300;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 3px solid $silver-300;
-
-    &:hover {
-      background-color: $light-200;
-      color: $accent-700;
-      border-color: $accent-700;
-    }
-
-    &:focus {
-      box-shadow: 0px 0px 0px 2px rgba($transparent-400, 0.7);
-    }
-
-    &:active {
-      background-color: $light-200;
-      color: $accent-900;
-      border: none;
-      box-shadow: none;
-    }
-  }
-
-  &__btn--prev {
-    order: 1;
-    margin-right: 23px;
-  }
-
-  &__btn--next {
-    order: 3;
-  }
-}
-
-.slick-list {
-  order: 0;
-}
-
-.slick-disabled {
-  border-color: $accent-900;
-  color: $accent-900;
+  @import './reviewSlick';
 }

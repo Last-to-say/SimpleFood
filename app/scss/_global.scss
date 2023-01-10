@@ -26,11 +26,23 @@ main {
 
 .section {
   padding-bottom: 120px;
+
+  @media (max-width: $lg) {
+    padding-bottom: 80px;
+  }
+
+  @media(max-width: $md) {
+    padding-bottom: 60px;
+  }
+
+  @media(max-width: $sm) {
+    padding-bottom: 40px;
+  }
 }
 
 .logo {
   transition: box-shadow 0.3s, opacity 0.3s;
-  min-width: 200px;
+  min-width: 115px;
 
   &:focus {
     border-radius: 5px;
@@ -105,6 +117,15 @@ main {
   text-align: center;
   font-size: 36px;
   color: $dark-800;
+
+  @media (max-width: $lg) {
+    font-size: 34px;
+  }
+
+  @media (max-width: $sm) {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
 }
 
 .sr-only {
@@ -126,6 +147,17 @@ main {
   justify-content: center;
   gap: 30px;
   margin-bottom: 55px;
+
+  @media (max-width: $lg) {
+    gap: 20px 10px;
+    margin-bottom: 40px;
+  }
+
+  @media (max-width: $sm) {
+    grid-template-columns: repeat(auto-fit, minmax(170px, 170px));
+    gap: 10px 5px;
+    margin-bottom: 30px;
+  }
 }
 
 .lock {

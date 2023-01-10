@@ -1,12 +1,45 @@
 $(function(){
   
+  $('.burger--open').on('click', function(){
+    $('.menu').addClass('menu--responsive');
+    $('body').addClass('lock');
+  });
+  
+  $('.burger--close').on('click', function(){
+    $('.menu').removeClass('menu--responsive');
+    $('body').removeClass('lock');
+  });
 
-  $('.burger').on('click', function(){
-    $('.menu').toggleClass('menu--responsive');
-    $('.burger').toggleClass('active');
-    $('.menu__list').toggleClass('menu__list--responsive');
-    $('.contacts').toggleClass('contacts--responsive')
-    $('body').toggleClass('lock');
+  $('.categories__navigation').slick({
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    autoplay: false,
+    infinite: true,
+    arrows: false,
+    variableWidth: true,
+    mobileFirst: true,
+    responsive: [
+      {
+         breakpoint: 768,
+         settings: "unslick"
+      }
+   ]
+  });
+
+  $('.restorants__grid').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: false,
+    infinite: true,
+    arrows: false,
+    dots: true,
+    mobileFirst: true,
+    responsive: [
+      {
+         breakpoint: 576,
+         settings: "unslick"
+      }
+   ]
   });
 
   $('.review__container').slick({

@@ -1,23 +1,53 @@
 .advantages {
   padding-bottom: 110px;
 
+  @media (max-width: $lg) {
+    padding-bottom: 80px;
+  }
+
+  @media(max-width: $md) {
+    padding-bottom: 60px;
+  }
+
+  @media(max-width: $sm) {
+    padding-bottom: 40px;
+  }
+
   &__inner {
     max-width: 1030px;
     background-image: url('../images/advantages/delivery.png');
     background-repeat: no-repeat;
     background-position: left center;
-    background-size: auto;
+    background-size: contain;
     margin: 0 auto;
+
+    @media(max-width: $lg) {
+      background-image: linear-gradient(0deg, $transparent-900), url('../images/advantages/delivery.png');
+    }
   }
 
   &__title,
   &__text,
   &__list {
     margin-bottom: 30px;
+
+    @media (max-width: $sm) {
+      margin-bottom: 22px;
+    }
   }
 
   &__title {
     text-align: left;
+  }
+
+  &__text {
+    @media (max-width: $md) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 16px;
+    }
   }
 
   &__title-decor {
@@ -57,16 +87,36 @@
     &--building::before {
       background-image: url('../images/icons/building.svg');
     }
+
+    @media (max-width: $md) {
+      font-size: 20px;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 18px;
+    }
   }
 
   &__info {
     max-width: 470px;
     padding: 60px 0;
     margin-left: auto;
+
+    @media (max-width: $md) {
+      padding: 40px 0;
+    }
+
+    @media (max-width: $sm) {
+      padding: 25px 0;
+    }
   }
 
   &__button {
     padding: 12px 32px;
     font-size: 18px;
+
+    @media (max-width: $sm) {
+      font-size: 14px;
+    }
   }
 }

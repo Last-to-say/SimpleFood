@@ -13,6 +13,7 @@ $transparent-500: rgba(194, 194, 194, 0.2);
 $transparent-600: rgba(255, 255, 255, 0.012);
 $transparent-700: rgba(255, 255, 255, 0.1);
 $transparent-800: rgba(54, 56, 83, 0.5);
+$transparent-900: rgba(249, 250, 255, 0.85);
 
 $light-100: #fff;
 $light-200: #FFF2ED;
@@ -24,64 +25,12 @@ $silver-100: #f9faff;
 $silver-200: #ececec;
 $silver-300: #c2c2c2;
 
+//media breakpoints
 
-//burger-menu mixin
-
-@mixin burger ($burgerWidth: 30px, $burgerHeight: 20px, $burgerColor: $dark-800, $burgerLineHeight: 2px) {
-  width: $burgerWidth;
-  height: $burgerHeight;
-  position: relative;
-  color: $burgerColor;
-
-  &__line {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 100%;
-    height: $burgerLineHeight;
-    background-color: currentColor;
-    transition: trandform 0.3s ease-in-out;
-  }
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: $burgerLineHeight;
-    background-color: currentColor;
-    transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-  }
-
-  &::before {
-    top: 0;
-  }
-
-  &::after {
-    top: calc(100% - $burgerLineHeight);
-  }
-
-  &.active {
-    .burger__line {
-      transform: scale(0);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    &::before {
-      transform: rotate(45deg);
-      top: 50%;
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-    }
-
-    &::after {
-      transform: rotate(-45deg);
-      top: 50%;
-      transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
-    }
-  }
-}
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
 
 //fancybox fix
 
