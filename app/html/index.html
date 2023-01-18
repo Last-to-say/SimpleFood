@@ -1,5 +1,8 @@
-@include('modules/_head.html')
-  @include('modules/_header.html')
+@include('modules/_head.html', {
+"title": "Симплфуд - Самый быстрый сервис доставки еды в вашем городе.",
+"styles": "css/index.min.css",
+})
+@include('modules/_header.html')
 
 <main class="main">
 
@@ -12,5 +15,5 @@
 
 </main>
 
-  @include('modules/_footer.html')
+@include('modules/_footer.html')
 @include('modules/_footer-scripts.html')

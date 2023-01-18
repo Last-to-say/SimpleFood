@@ -6,7 +6,7 @@
     gap: 30px;
     margin-bottom: 55px;
 
-    @media (max-width: $lg) {
+    @media (max-width: $xl) {
       gap: 50px;
       justify-content: space-around;
     }
@@ -35,6 +35,10 @@
     @media (max-width: $sm) {
       column-count: 1;
     }
+
+    @media (max-width: $sm){
+      width: 100%;
+    }
   }
 
   &__list-link {
@@ -55,6 +59,12 @@
     &:active {
       text-shadow: 2px 2px 5px $transparent-200;
     }
+
+    @media (max-width: $sm) {
+      width: 100%;
+      padding: 10px 0;
+      margin-bottom: 0;
+    }
   }
 
   &__copyright {
@@ -63,6 +73,23 @@
     padding: 30px 0;
     border-top: 1px solid $transparent-500;
     font-size: 14px;
+  }
+
+  @media (max-width: $sm) {
+
+    .contacts {
+      display: block;
+      width: 100%;
+
+      &__item:not(:last-child) {
+        margin-bottom: 5px;
+      }
+
+      &__link {
+        width: 100%;
+        padding: 11px 0;
+      }
+    }
   }
 
 }
@@ -103,4 +130,5 @@
     margin-right: 12px;
     transition: stroke 0.5s;
   }
+
 }

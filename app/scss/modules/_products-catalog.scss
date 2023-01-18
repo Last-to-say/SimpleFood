@@ -1,0 +1,11 @@
+.catalog{
+  &__top{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__form-select{
+    display: flex;
+    align-items: center;
+  }
+}

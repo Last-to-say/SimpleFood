@@ -3,6 +3,47 @@
 
   @media (max-width: $md) {
     padding-bottom: 30px;
+    .slick-active {
+      padding-bottom: 5px;
+    }
+
+    .slick-dots {
+      display: inline-flex;
+      justify-content: center;
+
+      button {
+        font-size: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: $silver-300;
+        border: 2px solid transparent;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $light-200;
+          border: 2px solid rgba($transparent-300, 0.7);
+        }
+
+        &:focus {
+          border: 2px solid $accent-900;
+        }
+
+        &:active {
+          background-color: $accent-700;
+          border: none;
+        }
+      }
+
+      li:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      .slick-active button {
+        background-color: $accent-800;
+      }
+
+    }
   }
 
   @media (max-width: $sm) {
@@ -18,10 +59,6 @@
 
     @media (max-width: $sm) {
       grid-template-columns: 1fr;
-    }
-
-    @media (max-width: $sm) {
-      @import './restorantsSlick';
     }
   }
 

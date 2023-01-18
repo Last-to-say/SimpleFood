@@ -14,6 +14,7 @@
   }
 
   &__inner {
+    position: relative;
     max-width: 1030px;
     background-image: url('../images/advantages/delivery.png');
     background-repeat: no-repeat;
@@ -22,7 +23,17 @@
     margin: 0 auto;
 
     @media(max-width: $lg) {
-      background-image: linear-gradient(0deg, $transparent-900), url('../images/advantages/delivery.png');
+      &::after {
+        content: "";
+        background-color: $transparent-900;
+        opacity: 0.5;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
     }
   }
 
@@ -101,6 +112,11 @@
     max-width: 470px;
     padding: 60px 0;
     margin-left: auto;
+
+    @media (max-width: $lg) {
+      position: relative;
+      z-index: 1;
+    }
 
     @media (max-width: $md) {
       padding: 40px 0;

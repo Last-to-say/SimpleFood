@@ -1,29 +1,13 @@
 $(function(){
   
   $('.burger--open').on('click', function(){
-    $('.menu').addClass('menu--responsive');
+    $('.menu-mobile').addClass('active');
     $('body').addClass('lock');
   });
   
   $('.burger--close').on('click', function(){
-    $('.menu').removeClass('menu--responsive');
+    $('.menu-mobile').removeClass('active');
     $('body').removeClass('lock');
-  });
-
-  $('.categories__navigation').slick({
-    slidesToShow: 3,
-    slidesToScroll: 2,
-    autoplay: false,
-    infinite: true,
-    arrows: false,
-    variableWidth: true,
-    mobileFirst: true,
-    responsive: [
-      {
-         breakpoint: 768,
-         settings: "unslick"
-      }
-   ]
   });
 
   $('.restorants__grid').slick({
@@ -36,7 +20,7 @@ $(function(){
     mobileFirst: true,
     responsive: [
       {
-         breakpoint: 576,
+         breakpoint: 768,
          settings: "unslick"
       }
    ]

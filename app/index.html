@@ -7,17 +7,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Симплфуд - Самый быстрый сервис доставки еды в вашем городе.</title>
   <link rel="icon" type="image/x-icon" href="./images/favicon.svg">
-  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/index.min.css">
 </head>
 
 <body>
-  <header class="header">
+<header class="header">
   <div class="container">
 
     <div class="header__navigation">
       <nav class="menu">
-        <div class="menu__mobile">
 
+        <a class="menu__logo logo" href="#">
+          <img class="logo__img" src="./images/logo/SimpleFood.svg" alt="Симплфуд лого" width="200" height="39">
+        </a>
+
+
+        <ul class="menu__list">
+          <li class="menu__list-item">
+            <a class="menu__list-link active" href="#">
+              Главная
+            </a>
+          </li>
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="#">
+              Блюда
+            </a>
+          </li>
+          <li class="menu__list-item">
+            <a class="menu__list-link" href="#">
+              Контакты
+            </a>
+          </li>
+        </ul>
+
+      </nav>
+
+      <div class="menu-mobile">
+        <div class="menu-mobile__box">
           <a class="menu__logo logo" href="#">
             <img class="logo__img" src="./images/logo/SimpleFood.svg" alt="Симплфуд лого" width="200" height="39">
           </a>
@@ -28,7 +54,6 @@
             </span>
           </button>
         </div>
-
 
         <ul class="menu__list">
           <li class="menu__list-item">
@@ -51,7 +76,7 @@
         <address class="contacts contacts--mobile">
           <ul class="contacts__list">
             <li class="contacts__item">
-              <a class="contacts__link external-link" href="#">
+              <a class="contacts__link link" href="#">
                 <svg class="contacts__icon" width="20" height="20">
                   <use href="./images/icons/symbol-defs.svg#location"></use>
                 </svg>
@@ -59,7 +84,7 @@
               </a>
             </li>
             <li class="contacts__item">
-              <a class="contacts__link external-link" href="tel:+380501112233">
+              <a class="contacts__link link" href="tel:+380501112233">
                 <svg class="contacts__icon" width="22" height="22">
                   <use href="./images/icons/symbol-defs.svg#call"></use>
                 </svg>
@@ -67,7 +92,7 @@
               </a>
             </li>
             <li class="contacts__item">
-              <a class="contacts__link external-link" href="mailto:support@sfood.com">
+              <a class="contacts__link link" href="mailto:support@sfood.com">
                 <svg class="contacts__icon" width="22" height="22">
                   <use href="./images/icons/symbol-defs.svg#message"></use>
                 </svg>
@@ -108,7 +133,7 @@
             </li>
           </ul>
         </address>
-      </nav>
+      </div>
 
       <div class="user-nav">
         <button class="user-nav__button" type="button">
@@ -165,7 +190,7 @@
         <a class="hero__button button" href="#">
           Заказать
         </a>
-        <a class="hero__link external-link" href="#">
+        <a class="hero__link link clickable" href="#">
           Подробнее
         </a>
       </div>
@@ -435,7 +460,7 @@
       </li>
     </ul>
 
-    <a class="categories__link external-link" href="#">
+    <a class="categories__link link clickable" href="#">
       Показать еще
     </a>
 
@@ -784,7 +809,7 @@
 
 </main>
 
-  <footer class="footer">
+<footer class="footer">
   <div class="container">
     <div class="footer__inner">
 
@@ -874,7 +899,7 @@
       <address class="contacts">
         <ul class="contacts__list">
           <li class="contacts__item">
-            <a class="contacts__link external-link" href="#">
+            <a class="contacts__link link" href="#">
               <svg class="contacts__icon" width="20" height="20">
                 <use href="./images/icons/symbol-defs.svg#location"></use>
               </svg>
@@ -882,7 +907,7 @@
             </a>
           </li>
           <li class="contacts__item">
-            <a class="contacts__link external-link" href="tel:+380501112233">
+            <a class="contacts__link link" href="tel:+380501112233">
               <svg class="contacts__icon" width="22" height="22">
                 <use href="./images/icons/symbol-defs.svg#call"></use>
               </svg>
@@ -890,7 +915,7 @@
             </a>
           </li>
           <li class="contacts__item">
-            <a class="contacts__link external-link" href="mailto:support@sfood.com">
+            <a class="contacts__link link" href="mailto:support@sfood.com">
               <svg class="contacts__icon" width="22" height="22">
                 <use href="./images/icons/symbol-defs.svg#message"></use>
               </svg>

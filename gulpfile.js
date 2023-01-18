@@ -1,6 +1,7 @@
 const {src, dest, watch, parallel, series} = require('gulp');
 const scss = require('gulp-sass')(require('sass'));
 const concat = require('gulp-concat');
+const rename = require('gulp-rename');
 const autoprefixer = require('gulp-autoprefixer');
 const uglify = require('gulp-uglify');
 const fileInclude   = require('gulp-file-include');
@@ -28,14 +29,15 @@ function browsersync() {
 }
 
 
-
 function styles() {
-  return src('app/scss/style.scss')
+  return src('app/scss/*.scss')
     .pipe(scss({outputStyle: 'compressed'}))
-    .pipe(concat('style.min.css'))
     .pipe(autoprefixer({
-      overrideBrowserslist:['last 110 versions'],
+      overrideBrowserslist:['last 10 versions'],
       grid: true,
+    }))
+    .pipe(rename({
+      suffix: '.min'
     }))
     .pipe(dest('app/css')) 
     .pipe(browserSync.stream())
