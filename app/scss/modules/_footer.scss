@@ -26,6 +26,7 @@
   }
 
   &__list {
+    max-width: 570px;
     column-count: 3;
 
     @media (max-width: $lg) {

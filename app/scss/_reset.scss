@@ -50,6 +50,10 @@ select {
   outline: transparent;
 }
 
+input[type="range"i] {
+  margin: 0;
+}
+
 button {
   border: none;
   cursor: pointer;

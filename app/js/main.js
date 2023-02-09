@@ -1,4 +1,32 @@
+const rangeIput = document.querySelectorAll('.slider-input input'),
+priceInput = document.querySelectorAll('.price__data input'),
+progress = document.querySelector('.slider .slider__progress');
+
+let priceGap = 0;
+
+rangeIput.forEach(input =>{
+  input.addEventListener('input', e => {
+    let minVal = parseInt(rangeIput[0].value),
+    maxVal = parseInt(rangeIput[1].value);
+
+    if(maxVal - minVal < priceGap){
+      if (e.target.className === 'slider-input__item--min'){
+        rangeIput[0].value = maxVal - priceGap;
+      }else{
+        rangeIput[1].value = minVal + priceGap;
+      }
+    }else{
+      priceInput[0].value = minVal;
+      priceInput[1].value = maxVal;
+      progress.style.left = (minVal / rangeIput[0].max) * 100 + '%';
+      progress.style.right = 100 - (maxVal / rangeIput[1].max) * 100 + '%';
+    }
+  });  
+
+});
+
 $(function(){
+
   
   $('.burger--open').on('click', function(){
     $('.menu-mobile').addClass('active');
@@ -10,6 +38,29 @@ $(function(){
     $('body').removeClass('lock');
   });
 
+  $('.field__name').on('click', function(){
+    $('.select__list-name').toggleClass('active');
+    $('.select__list-count').removeClass('active');
+  });
+
+  $('.field__count').on('click', function(){
+    $('.select__list-count').toggleClass('active');
+    $('.select__list-name').removeClass('active');
+  });
+
+  $('.pagination__link').on('click', function(){
+    $('.pagination__link').removeClass('pagination__link--active')
+    $(this).addClass('pagination__link--active');
+  });
+
+  $('.select__mobile-filters').on('click', function(){
+    $('.menu-mob').addClass('active');
+    $('.filters').addClass('filters--mobile');
+    $('body').addClass('lock');
+  });
+
+
+  
   $('.restorants__grid').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -38,4 +89,6 @@ $(function(){
   });
 
   var mixer = mixitup('.products-grid');
+
+
 });

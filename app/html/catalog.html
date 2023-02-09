@@ -1,6 +1,6 @@
 @include('modules/_head.html',{
 "title": "Каталог продуктов Симплфуд",
-"styles": "css/catalog.min.css", 
+"styles": "css/catalog.min.css",
 })
 @include('modules/_header.html')
 <main class="main">
@@ -17,9 +17,9 @@
           </a>
         </li>
         <li class="breadcrumbs__item">
-          <a class="breadcrumbs__link link" href="#">
+          <span class="breadcrumbs__link link">
             Каталог товаров
-          </a>
+          </span>
         </li>
       </ul>
     </div>
@@ -27,5 +27,10 @@
 
   @include('modules/_products-catalog.html')
 
+  @include('modules/_app.html')
+
+  @include('modules/_catalog-sale.html')
+
 </main>
+@include('modules/_footer.html')
 @include('modules/_footer-scripts.html')
